@@ -161,8 +161,8 @@ const saveImages = async (
   }
 };
 
-export const generateImagesLinks = async (prompt: string) => {
-  const authCookie = Config.bingImageCookie;
+export const generateImagesLinks = async (prompt: string, cookie: string) => {
+  const authCookie = cookie ? cookie : Config.bingImageCookie;
   const outputDir = `${Config.tempDir}/${prompt}`;
 
   if (!authCookie || !prompt) {
@@ -175,8 +175,8 @@ export const generateImagesLinks = async (prompt: string) => {
   return imageLinks;
 };
 
-export const generateImageFiles = async (prompt: string) => {
-  const authCookie = Config.bingImageCookie;
+export const generateImageFiles = async (prompt: string, cookie: string) => {
+  const authCookie = cookie ? cookie : Config.bingImageCookie;
   const outputDir = `${Config.tempDir}/${prompt}`;
 
   if (!authCookie || !prompt) {
